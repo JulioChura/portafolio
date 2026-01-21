@@ -1,0 +1,166 @@
+[
+  {
+    "id": 1,
+    "slug": "aloja-aqp",
+    "title": "AlojaAQP – Plataforma de Alquiler Universitario",
+    "category": "Plataforma Web",
+    "description": "Plataforma fullstack para la búsqueda y gestión de alojamientos universitarios en Arequipa.",
+    "fullDescription": [
+      "AlojaAQP es una plataforma web diseñada para facilitar a estudiantes universitarios la búsqueda de alojamientos cercanos a universidades en Arequipa. El sistema permite filtrar por precio, servicios, ubicación y disponibilidad, ofreciendo una experiencia clara y orientada al usuario.",
+      "El proyecto incluye un frontend moderno construido con Vue 3 y un backend robusto desarrollado con Django REST Framework. Se implementó autenticación JWT, gestión de roles (estudiantes y propietarios), sistema de reseñas, favoritos y carga de imágenes en la nube, además de documentación automática de la API."
+    ],
+    "tags": [
+      "Vue 3",
+      "Django",
+      "Django REST Framework",
+      "PostgreSQL",
+      "JWT",
+      "Docker"
+    ],
+    "thumbnail": "/images/aloja-aqp/hero.webp",
+    "images": [
+      "/images/aloja-aqp/homepage-hero.webp",
+      "/images/aloja-aqp/search-filters.webp",
+      "/images/aloja-aqp/property-details.webp",
+      "/images/aloja-aqp/property-gallery.webp",
+      "/images/aloja-aqp/property-amenities.webp",
+      "/images/aloja-aqp/user-favorites.webp",
+      "/images/aloja-aqp/reviews-section.webp",
+      "/images/aloja-aqp/owner-dashboard.webp",
+      "/images/aloja-aqp/authentication-page.webp"
+    ],
+    "techStack": [
+      "Vue 3",
+      "Vite",
+      "TailwindCSS",
+      "Pinia",
+      "Django",
+      "Django REST Framework",
+      "PostgreSQL",
+      "JWT",
+      "Cloudinary",
+      "Docker"
+    ],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/JulioChura/AQPINMUEBLES.git"
+  },
+
+  {
+    "id": 2,
+    "slug": "aqp-tracker",
+    "title": "aqpTracker",
+    "category": "Web Platform",
+    "description": "Public transportation route management and citizen incident reporting system in Arequipa.",
+    "fullDescription": [
+      "aqpTracker is a civic web platform that allows citizens to search public transport routes, visualize them on interactive maps, and report urban incidents in real time.",
+      "The platform combines a modern frontend with a Django REST backend, supporting route visualization, incident reporting with images and geolocation, nested comments, reactions, and notifications.",
+      "My main contribution focused on the forum and incident management module, including data modeling, REST APIs, nested comments, reactions, notifications, and image handling."
+    ],
+    "tags": [
+      "React",
+      "TypeScript",
+      "Django",
+      "Python",
+      "TailwindCSS",
+      "SQLite",
+      "Vite",
+      "Leaflet"
+    ],
+    "thumbnail": "/images/aqp-tracker/hero.webp",
+    "images": [
+      "/images/aqp-tracker/home.webp",
+      "/images/aqp-tracker/routes-view-1.webp",
+      "/images/aqp-tracker/routes-view-2.webp",
+      "/images/aqp-tracker/routes-view-3.webp",
+      "/images/aqp-tracker/forum-report-1.webp",
+      "/images/aqp-tracker/forum-report-2.webp",
+      "/images/aqp-tracker/forum-report-4.webp",
+      "/images/aqp-tracker/admin-dashboard.webp",
+      "/images/aqp-tracker/admin-stats.webp"
+    ],
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Django",
+      "Python",
+      "TailwindCSS",
+      "SQLite",
+      "Vite",
+      "Leaflet"
+    ],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/JulioChura/aqpTracker"
+  },
+
+  {
+    "id": 3,
+    "slug": "edutec-academy",
+    "title": "EduTec Academy – Plataforma Educativa Digital",
+    "category": "Plataforma Educativa",
+    "description": "Plataforma educativa web para la gestión integral de cursos, estudiantes y profesores con roles diferenciados.",
+    "fullDescription": [
+      "EduTec Academy es una plataforma educativa moderna diseñada para digitalizar la gestión académica de instituciones educativas. Ofrece roles claramente definidos para administradores, profesores y estudiantes, cada uno con interfaces y funcionalidades específicas.",
+      "El sistema cuenta con gestión de cursos por bloques modulares, tareas y evaluaciones, horarios visuales, dashboards interactivos y autenticación segura mediante JWT. El frontend fue desarrollado con Vue 3 y Vuetify, mientras que el backend utiliza Django REST Framework."
+    ],
+    "tags": [
+      "Vue",
+      "Vuetify",
+      "Vite",
+      "Django",
+      "Django REST Framework",
+      "JWT"
+    ],
+    "thumbnail": "/images/edutect/login.webp",
+    "images": [
+      "/images/edutect/admin/login.webp",
+      "/images/edutect/admin/dashboard-overview.webp",
+      "/images/edutect/admin/user-management.webp",
+      "/images/edutect/admin/course-management.webp",
+      "/images/edutect/admin/statistics-view.webp",
+      "/images/edutect/profesor/teacher-dashboard.webp",
+      "/images/edutect/profesor/my-classes.webp",
+      "/images/edutect/profesor/create-assignment.webp",
+      "/images/edutect/alumno/student-dashboard.webp",
+      "/images/edutect/alumno/my-courses.webp",
+      "/images/edutect/alumno/assignments-list.webp",
+      "/images/edutect/alumno/grades-view.webp"
+    ],
+    "techStack": [
+      "Vue.js 3.5",
+      "Vuetify 3",
+      "Vite",
+      "Vue Router",
+      "Axios",
+      "Vue ChartJS",
+      "Django",
+      "Django REST Framework",
+      "JWT",
+      "PostgreSQL",
+      "SQLite"
+    ],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/JulioChura/edutec_academy.git"
+  },
+
+  {
+    "id": 3,
+    "slug": "aether-analytics",
+    "title": "Aether Analytics",
+    "category": "SaaS Platform",
+    "description": "Enterprise-grade SaaS dashboard with data visualization.",
+    "fullDescription": [
+      "Aether Analytics provides enterprise teams with powerful insights through interactive data visualizations. Built with D3.js and React, it transforms complex datasets into actionable intelligence.",
+      "The platform processes millions of data points daily, requiring careful optimization of both database queries and frontend rendering. I implemented virtual scrolling, lazy loading, and optimized PostgreSQL queries to ensure smooth performance even with large datasets."
+    ],
+    "tags": ["PostgreSQL", "D3.js", "React", "Python"],
+    "thumbnail": "https://lh3.googleusercontent.com/aida-public/AB6AXuD9DdvFTb6GUmfKLMJd8xA__iAJ4fC1Bgp-koUbWn98COLrK-cE8qqRO6rlHlYfUkOPunVZdtGcYEC8YW7hrT1A_ZMUHQfjg6muVaSnT4xjFJVLgfyWpmehuhingcK_SDQOJqfK3mSvbMuFNs3Lo1NEdop8bgKpmmpX1eC6snY6NlWFXn7_n9jY_Wv1eu1Df9BXG-YvAucljkrfTSHguRG9eAUUxnwlY3WdOpHAEtasWjhRXD5y56z5_VTj2X6p22Gxysewqxyg55Ys",
+    "images": [
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuC4Dok5WgVaJoouTnic2hqjbbIKobI-zlb7HXRIx6RQNH1UelsSzgh9IhWPqpTDkvBVBCBkchfJ02c5ywqNgnemKGfpJPpVFBzghJy272b6wrc4FJBMFxVmFSIXptaZ2iMAlRTnbolKjsYuVuLXQjNv08pdjtxRqYkUMBLAq-8bhnGnX04VOsl1ThXdUyYWP-3fGhVKXvjzVBg03f71DglM2rZXIXInGja0dufC3jN2wyx_jnC8_JXD_FCLItlZb2hqTzZsqYnihlWG",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCj_0ablJNcUPUrNBmw2K6d-T-_ag9tldoLwszJAU8w7vrhCeb13_DM5FJd0puU6FEr0_9I53zX13xvaAMAOOe8jQQWCXw4R6mbkf59cZyQBv2c2tF-4FX_qpqP-dmFSaIfiPMetIXUMfnmBniXwKHc_BetCc6azeVLW8qL8cvVN5s3JWBOOeMPFdBGFQCItijAEFUnIG6Gh9h-1R3VAU3ihsf_oQ0WmsGeeJQF-eVatV_ozFg6Cg2MuizOw83orG86RfQfpqaONppy",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuD9PigMr_jU62MU68TYNk4XZPk254jx2s2pDUXJeOcCGoc8KKSWwyujMWuix7Xm_32Crk3Br8qiZvh0QfIbIJQjjOxCXRUdkx1gK4S6g3Sn3t4fx2cUYsBBXSOiZmXrW02vLlczLxXYFv9becGgYLvgm04ORJxzfmersqS0O5wShQOSgL_XuzUtvrSrB-1wiEjbW6lvpkoFTE-A75SpbmsDn1FSRDZ_9PJ9_AiVpujUaxmXzp15i6-qUdt0UAlKL_rBvPjys14_3dHI"
+    ],
+    "techStack": ["React", "D3.js", "Python", "PostgreSQL", "Docker"],
+    "liveUrl": "#",
+    "githubUrl": "#"
+  }
+]
