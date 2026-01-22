@@ -4,8 +4,9 @@
       <img 
         alt="Abstract Tech Background" 
         class="w-full h-full object-cover opacity-20 mix-blend-luminosity" 
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhanyrrPUPls0fGRbgS1Qxk_4bYxfudWOyUELtall7XempDkrDvyLsdIhNE15tUy40CgnNzFNtYFqrMpFG-2-j42cLUCUriiT8Z99Cpb-fTEnEl29U0dfaZBdDL9c3eLlT_RIzkUk9AOottvC34mo4qkWU602w9XeazqgP2QSzBf27fQWhcqe5aAvhVbcum94M0aLbAtJMPkzM1RnV4ri1bBaQlJTlgLO6AvixQqp_g2ALbxXAk8gA6yn6mCkQKVAxmrlBFnT7zo17"
+        src="/public/images/hero.webp"
       />
+      
       <div class="absolute inset-0 bg-background-dark/60"></div>
     </div>
     
@@ -44,6 +45,8 @@
 </template>
 
 <script setup>
+import projectsData from '../data/projects.json'; 
+
 const scrollToProjects = () => {
   document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
 };

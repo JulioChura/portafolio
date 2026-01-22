@@ -41,13 +41,12 @@
         
         <!-- Tecnologías debajo de la card -->
         <div class="p-4 flex items-center gap-3">
-          <img 
-            v-for="(tech, index) in project.tags.slice(0, 5)" 
+          <Icon
+            v-for="(tech, index) in filteredTags(project.tags).slice(0, 5)"
             :key="index"
-            :src="getTechIcon(tech)"
-            :alt="tech"
+            :icon="getTechIconName(tech)"
+            class="w-6 h-6 opacity-70 hover:opacity-100 transition-opacity"
             :title="tech"
-            class="w-6 h-6 object-contain opacity-70 hover:opacity-100 transition-opacity"
           />
         </div>
       </router-link>
@@ -57,69 +56,78 @@
 
 <script setup>
 import { ref } from 'vue';
+import { Icon } from '@iconify/vue';
 import projectsData from '../data/projects.json';
 
 const projects = ref(projectsData);
 
-// Mapeo de tecnologías a sus iconos
-const techIcons = {
-  'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-  'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-  'TS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-  'Vue': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-  'Vue 3': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-  'Vue 3.5': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-  'Vue.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-  'Vue.js 3': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-  'Vue.js 3.5': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-  'Vite': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg',
-  'TailwindCSS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
-  'Tailwind CSS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
-  'Pinia': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-  'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  'Django': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',
-  'Django REST Framework': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',
-  'PostgreSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-  'SQLite': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg',
-  'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-  'JWT': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/json/json-original.svg',
-  'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-  'Angular': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
-  'Angular 19': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
-  'Angular Material': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
-  'RxJS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rxjs/rxjs-original.svg',
-  'A-Frame': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-  'Three.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'WebVR': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'MediaPipe': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'HTML': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-  'HTML5': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-  'CSS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-  'CSS3': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-  'Cloudinary': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'Axios': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'Vue Router': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-  'Vuetify': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-  'Vuetify 3': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-  'Vue ChartJS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'Leaflet': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'Mercado Pago': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'jsPDF': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'HTML2Canvas': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'Gmail SMTP': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  'API REST': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'Redis': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg',
-  'AWS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
-  'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-  'Go': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg',
-  'WebSocket': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg',
-  'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-  'GraphQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
-  'Docker Compose': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+// Mantener solo lenguajes, frameworks, bases de datos y Vite
+const relevantMap = {
+  'Vue': 'logos:vue',
+  'Vue 3': 'logos:vue',
+  'Vue.js': 'logos:vue',
+  'React': 'logos:react',
+  'Angular': 'logos:angular-icon',
+  'Django': 'skill-icons:django',
+  'Python': 'logos:python',
+  'TypeScript': 'logos:typescript-icon',
+  'JavaScript': 'logos:javascript',
+  'PostgreSQL': 'logos:postgresql',
+  'SQLite': 'simple-icons:sqlite',
+  'Vite': 'logos:vitejs',
+  'Vuetify': 'logos:vuetify',
+  'TailwindCSS': 'logos:tailwindcss-icon',
+  'Tailwind CSS': 'logos:tailwindcss-icon'
 };
 
-const getTechIcon = (tech) => {
-  return techIcons[tech] || 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/devicon/devicon-original.svg';
+const normalize = (tag) => {
+  switch (tag) {
+    case 'Vue 3':
+    case 'Vue.js':
+    case 'Vue.js 3':
+    case 'Vue.js 3.5':
+      return 'Vue';
+    case 'Tailwind CSS':
+      return 'TailwindCSS';
+    default:
+      return tag;
+  }
+};
+
+const filteredTags = (tags) => {
+  const normalized = tags
+    .map((t) => normalize(t))
+    .filter((t) => Object.prototype.hasOwnProperty.call(relevantMap, t));
+
+  const unique = Array.from(new Set(normalized));
+
+  const priority = {
+    'Vue': 0,
+    'React': 0,
+    'Angular': 0,
+    'Django': 0,
+    'TypeScript': 1,
+    'JavaScript': 1,
+    'Python': 1,
+    'Vite': 2,
+    'PostgreSQL': 3,
+    'SQLite': 3,
+    'TailwindCSS': 4,
+    'Vuetify': 4
+  };
+
+  const sorted = unique.sort((a, b) => (priority[a] ?? 99) - (priority[b] ?? 99));
+
+  const limit = 5;
+  let top = sorted.slice(0, limit);
+  if (unique.includes('Vite') && !top.includes('Vite')) {
+    top[top.length - 1] = 'Vite';
+  }
+  return top;
+};
+
+const getTechIconName = (tech) => {
+  const key = normalize(tech);
+  return relevantMap[key] || 'mdi:code-tags';
 };
 </script>

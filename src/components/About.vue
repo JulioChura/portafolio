@@ -1,93 +1,129 @@
 <template>
-  <section class="w-full py-24 bg-background-dark" id="about">
-    <div class="max-w-[1400px] mx-auto px-6 md:px-20">
-      <div class="bg-surface-dark/40 border border-border-dark p-8 md:p-12 lg:p-16 rounded-[2.5rem] relative overflow-hidden">
-        <div class="absolute -top-24 -right-24 size-96 bg-primary/5 blur-[120px] rounded-full"></div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 relative z-10">
+  <section
+    id="about"
+    class="w-full py-16 sm:py-20 lg:py-24 bg-background-dark overflow-hidden"
+  >
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+      <div
+        class="relative bg-surface-dark/40 border border-border-dark
+               p-6 sm:p-8 md:p-12 lg:p-16 rounded-[2.5rem]"
+      >
+        <!-- Glow decorativo RESPONSIVE -->
+        <div
+          class="absolute -top-20 -right-20
+                 w-[40vw] max-w-[22rem] aspect-square
+                 bg-primary/5 blur-[80px] rounded-full pointer-events-none"
+        ></div>
+
+        <!-- Layout -->
+        <div
+          class="relative z-10 grid grid-cols-1
+                 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]
+                 gap-10 xl:gap-20"
+        >
           <!-- Image Column -->
-          <div class="lg:col-span-5 flex flex-col gap-8">
+          <div class="flex flex-col gap-8 min-w-0">
             <div class="relative group">
-              <div class="absolute -inset-1 bg-gradient-to-tr from-primary/40 to-transparent rounded-[2rem] blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
-              <div class="relative rounded-[1.8rem] overflow-hidden aspect-[4/5] border border-white/10 shadow-2xl">
-                <img 
-                  alt="Professional Portrait" 
-                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 hover:scale-100" 
+              <div
+                class="absolute -inset-1 bg-gradient-to-tr
+                       from-primary/40 to-transparent
+                       rounded-[2rem] blur opacity-25
+                       group-hover:opacity-40 transition duration-500"
+              ></div>
+
+              <div
+                class="relative rounded-[1.8rem] overflow-hidden
+                       border border-white/10 shadow-2xl
+                       md:aspect-[4/5]"
+              >
+                <img
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmxPxletF2K4M8MhOsfTXPgdxnHXtE_evZP1TbzW4FUumGQSYhMV5742MNQCvKwTk2XB6sOxZObckxqtGHzJd0TJ9ylp7k-3NBGGgJT2GIjAhBs57mC3NUlo45-47ZHC5nqLwxSLT8I4CrNWVYAP4o1go5bjIZYEkUcX0cmKVWf02ickpRucmaG_1Y1oeryBthUBJpnezNsPMpPXbBlo7FBnQVNBHhxDpT--PdTDOblXv156cMGm-ynVaANaofgMC9In4F7RKzhf9V"
+                  alt="Professional Portrait"
+                  loading="lazy"
+                  class="w-full h-full object-cover
+                         grayscale hover:grayscale-0
+                         transition-all duration-700 ease-in-out
+                         scale-105 hover:scale-100"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"></div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t
+                         from-background-dark/80 via-transparent to-transparent"
+                ></div>
               </div>
             </div>
-            
+
+            <!-- Experience -->
             <div class="flex flex-col gap-4">
-              <h3 class="text-white text-xl font-bold flex items-center gap-3">
+              <h3 class="text-white text-lg sm:text-xl font-bold flex items-center gap-3">
                 <span class="w-8 h-[2px] bg-primary"></span>
-                Experience Highlights
+                {{ content.about.experienceTitle }}
               </h3>
-              <div class="space-y-4">
-                <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/20 transition-all">
-                  <span class="text-primary font-bold text-lg">01.</span>
-                  <div>
-                    <p class="text-white font-medium">8+ Years Full Stack</p>
-                    <p class="text-slate-500 text-sm">Specializing in Next.js & Cloud Infrastructure.</p>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/20 transition-all">
-                  <span class="text-primary font-bold text-lg">02.</span>
-                  <div>
-                    <p class="text-white font-medium">50+ Projects Delivered</p>
-                    <p class="text-slate-500 text-sm">From startup MVPs to enterprise dashboards.</p>
-                  </div>
+
+              <div class="flex flex-col gap-4">
+                <div
+                  v-for="(item, idx) in content.about.experience"
+                  :key="idx"
+                  class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/20 transition-all"
+                >
+                  <span class="text-primary font-bold">{{ item.index }}</span>
+                  <p class="text-white font-medium">{{ item.title }}</p>
+                  <p class="text-slate-500 text-sm">{{ item.description }}</p>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <!-- Content Column -->
-          <div class="lg:col-span-7 flex flex-col gap-10">
+          <div class="flex flex-col gap-10 min-w-0">
             <div class="flex flex-col gap-4">
-              <span class="text-primary font-bold tracking-[0.2em] text-sm uppercase">About Me</span>
-              <h2 class="text-white text-4xl md:text-5xl font-bold tracking-tight">Beyond the Code</h2>
+              <span class="text-primary font-bold tracking-[0.2em] text-sm uppercase">
+                {{ content.about.sectionTitle }}
+              </span>
+              <h2
+                class="text-white font-bold tracking-tight leading-tight
+                       text-[clamp(1.75rem,4vw,3rem)]"
+              >
+                {{ content.about.headline }}
+              </h2>
             </div>
-            
-            <div class="flex flex-col gap-6 text-slate-300 text-lg leading-relaxed font-light">
-              <p>
-                My journey in technology started with a simple curiosity: how do things work under the hood? Over the past decade, that curiosity evolved into a professional mission to build software that isn't just functional, but genuinely impactful.
-              </p>
-              <p>
-                I specialize in bridging the gap between complex engineering requirements and intuitive user experiences. I believe that clean code is a prerequisite, but the real value lies in understanding the human element behind every digital interaction.
-              </p>
-              <p>
-                When I'm not architecting systems, I'm likely exploring the intersection of design and performance, ensuring that every application I build is as fast as it is beautiful. My approach is rooted in technical rigor and a relentless drive for innovation.
+
+            <div
+              class="flex flex-col gap-6 text-slate-300 font-light leading-relaxed
+                     text-[clamp(1rem,2.5vw,1.25rem)]"
+            >
+              <p v-for="(para, pidx) in content.about.paragraphs" :key="pidx">
+                {{ para }}
               </p>
             </div>
-            
-            <div class="flex flex-col gap-6 mt-4">
-              <h3 class="text-white text-xl font-bold">Core Philosophy</h3>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="p-5 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all">
-                  <span class="material-symbols-outlined text-primary mb-3">lightbulb</span>
-                  <h4 class="text-white font-bold text-sm mb-1">Problem Solving</h4>
-                  <p class="text-slate-500 text-xs">Finding elegant solutions to complex logic hurdles.</p>
-                </div>
-                <div class="p-5 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all">
-                  <span class="material-symbols-outlined text-primary mb-3">groups</span>
-                  <h4 class="text-white font-bold text-sm mb-1">Teamwork</h4>
-                  <p class="text-slate-500 text-xs">Collaboration as the foundation for great products.</p>
-                </div>
-                <div class="p-5 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all">
-                  <span class="material-symbols-outlined text-primary mb-3">psychology</span>
-                  <h4 class="text-white font-bold text-sm mb-1">Learning</h4>
-                  <p class="text-slate-500 text-xs">Constant evolution in a fast-paced ecosystem.</p>
+
+            <!-- Philosophy -->
+            <div class="flex flex-col gap-6">
+              <h3 class="text-white text-lg sm:text-xl font-bold">
+                {{ content.about.coreTitle }}
+              </h3>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div
+                  v-for="(core, cidx) in content.about.core"
+                  :key="cidx"
+                  class="p-5 rounded-2xl bg-white/5 border border-white/5"
+                >
+                  <span class="material-symbols-outlined text-primary mb-3">{{ core.icon }}</span>
+                  <h4 class="text-white font-bold text-sm mb-1">{{ core.title }}</h4>
+                  <p class="text-slate-500 text-xs">{{ core.description }}</p>
                 </div>
               </div>
             </div>
-            
-            <div class="pt-8 border-t border-border-dark flex flex-wrap gap-3">
-              <span class="px-4 py-2 rounded-full bg-surface-dark border border-border-dark text-slate-400 text-xs font-medium">☕ Coffee Enthusiast</span>
-              <span class="px-4 py-2 rounded-full bg-surface-dark border border-border-dark text-slate-400 text-xs font-medium">🎸 Guitar Player</span>
-              <span class="px-4 py-2 rounded-full bg-surface-dark border border-border-dark text-slate-400 text-xs font-medium">⛰️ Mountain Hiker</span>
-              <span class="px-4 py-2 rounded-full bg-surface-dark border border-border-dark text-slate-400 text-xs font-medium">🛸 Sci-Fi Reader</span>
+
+            <!-- Tags -->
+            <div class="pt-6 border-t border-border-dark flex flex-wrap gap-3">
+              <span
+                v-for="(hobby, hidx) in content.about.hobbies"
+                :key="hidx"
+                class="px-4 py-2 rounded-full bg-surface-dark border border-border-dark text-xs text-slate-400"
+              >
+                {{ hobby }}
+              </span>
             </div>
           </div>
         </div>
@@ -95,3 +131,6 @@
     </div>
   </section>
 </template>
+<script setup>
+import content from '../data/content.json';
+</script>

@@ -14,8 +14,10 @@
       "Django",
       "Django REST Framework",
       "PostgreSQL",
+      "TailwindCSS",
       "JWT",
-      "Docker"
+      "Docker",
+      "Vite"
     ],
     "thumbnail": "/images/aloja-aqp/hero.webp",
     "images": [
@@ -60,11 +62,11 @@
       "React",
       "TypeScript",
       "Django",
-      "Python",
       "TailwindCSS",
-      "SQLite",
+      "PostgreSQL",
       "Vite",
-      "Leaflet"
+      "Leaflet",
+      "Vite"
     ],
     "thumbnail": "/images/aqp-tracker/hero.webp",
     "images": [
@@ -82,7 +84,6 @@
       "React",
       "TypeScript",
       "Django",
-      "Python",
       "TailwindCSS",
       "SQLite",
       "Vite",
@@ -153,6 +154,7 @@
       "Participé activamente en la implementación del frontend, colaborando en la construcción de componentes de interacción, flujos de usuario y capas visuales que conectan la experiencia VR con la interfaz web tradicional."
     ],
     "tags": [
+      "Django",
       "React",
       "A-Frame",
       "Three.js",
@@ -261,7 +263,6 @@
       "El desarrollo se centró en asegurar una comunicación sólida entre frontend y backend, la correcta implementación del flujo de pagos, la construcción de componentes clave de la interfaz y el manejo de estados, validaciones y comprobantes para el usuario final."
     ],
     "tags": [
-      "Python",
       "Django",
       "Django REST Framework",
       "Vue.js",
@@ -312,7 +313,6 @@
     "tags": [
       "Vue.js",
       "Pinia",
-      "JavaScript",
       "Vite",
       "API REST",
       "HTML",
@@ -332,6 +332,5 @@
     "liveUrl": "https://bebidas-pinia.vercel.app/",
     "githubUrl": "https://github.com/JulioChura/bebidas-pinia.git"
   }
-
- 
+  
 ]

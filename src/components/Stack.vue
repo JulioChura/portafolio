@@ -9,9 +9,9 @@
       <div 
         v-for="tech in technologies" 
         :key="tech.name"
-        class="flex flex-col gap-4 rounded-2xl border border-border-dark bg-surface-dark p-8 items-start custom-glow transition-all"
+        class="flex flex-col gap-4 rounded-2xl border border-border-dark bg-surface-dark p-8 items-start custom-glow transition-all hover:scale-[1.02]"
       >
-        <span class="material-symbols-outlined text-primary text-4xl">{{ tech.icon }}</span>
+        <Icon :icon="tech.icon" class="w-10 h-10 md:w-12 md:h-12 opacity-80 hover:opacity-100 transition-opacity" :title="tech.name" />
         <h3 class="text-white text-lg font-bold">{{ tech.name }}</h3>
       </div>
     </div>
@@ -19,12 +19,19 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
+
+// Core technologies requested, with Iconify icons
 const technologies = [
-  { name: 'React', icon: 'data_object' },
-  { name: 'Next.js', icon: 'layers' },
-  { name: 'Node.js', icon: 'memory' },
-  { name: 'PostgreSQL', icon: 'database' },
-  { name: 'Docker', icon: 'deployed_code' },
-  { name: 'AWS', icon: 'cloud' }
+  { name: 'Vue', icon: 'logos:vue' },
+  { name: 'React', icon: 'logos:react' },
+  { name: 'PostgreSQL', icon: 'logos:postgresql' },
+  { name: 'Python', icon: 'logos:python' },
+  { name: 'Django', icon: 'skill-icons:django' },
+  { name: 'JavaScript', icon: 'logos:javascript' },
+  { name: 'TypeScript', icon: 'logos:typescript-icon' },
+  { name: 'Vite', icon: 'logos:vitejs' },
+  { name: 'Java', icon: 'logos:java' },
+  { name: 'TailwindCSS', icon: 'logos:tailwindcss-icon' }
 ];
 </script>

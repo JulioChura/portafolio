@@ -6,13 +6,13 @@
         <div class="size-8 bg-primary rounded flex items-center justify-center text-background-dark">
           <span class="material-symbols-outlined font-bold">terminal</span>
         </div>
-        <h2 class="text-white text-xl font-bold leading-tight tracking-tight">JCodinx</h2>
+        <h2 class="text-white text-xl font-bold leading-tight tracking-tight">{{ content.header.brand }}</h2>
       </router-link>
       
       <!-- Botón Resume y Menu Toggle -->
       <div class="flex md:order-2 items-center gap-3">
         <button class="hidden sm:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold transition-all hover:bg-white/20">
-          <span>Resume</span>
+          <span>{{ content.header.resumeLabel }}</span>
         </button>
         
         <!-- Botón Hamburguesa -->
@@ -37,41 +37,18 @@
         id="navbar-menu"
       >
         <nav class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-white/20 rounded-lg bg-background-dark/95 md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-transparent">
-          <a 
-            @click="handleMenuClick('home')" 
-            class="block py-2 px-3 text-primary rounded-sm md:bg-transparent md:p-0 cursor-pointer"
-            aria-current="page"
-          >
-            Home
-          </a>
-          <a 
-            @click="handleMenuClick('about')" 
+          <a
+            v-for="item in content.header.nav"
+            :key="item.id"
+            @click="handleMenuClick(item.id)"
             class="block py-2 px-3 text-slate-400 rounded hover:bg-white/10 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 transition-colors cursor-pointer"
           >
-            About
-          </a>
-          <a 
-            @click="handleMenuClick('stack')" 
-            class="block py-2 px-3 text-slate-400 rounded hover:bg-white/10 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 transition-colors cursor-pointer"
-          >
-            Stack
-          </a>
-          <a 
-            @click="handleMenuClick('projects')" 
-            class="block py-2 px-3 text-slate-400 rounded hover:bg-white/10 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 transition-colors cursor-pointer"
-          >
-            Projects
-          </a>
-          <a 
-            @click="handleMenuClick('contact')" 
-            class="block py-2 px-3 text-slate-400 rounded hover:bg-white/10 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 transition-colors cursor-pointer"
-          >
-            Contact
+            {{ item.label }}
           </a>
           
           <!-- Botón Resume en menú móvil -->
           <button class="sm:hidden flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-5 mt-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold transition-all hover:bg-white/20">
-            <span>Resume</span>
+            <span>{{ content.header.resumeLabel }}</span>
           </button>
         </nav>
       </div>
@@ -82,6 +59,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import content from '../data/content.json';
 
 const router = useRouter();
 const isMenuOpen = ref(false);

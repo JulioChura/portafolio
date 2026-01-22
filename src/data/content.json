@@ -1,0 +1,59 @@
+{
+  "header": {
+    "brand": "JCodinx",
+    "resumeLabel": "Resume",
+    "nav": [
+      { "id": "home", "label": "Home" },
+      { "id": "about", "label": "About" },
+      { "id": "stack", "label": "Stack" },
+      { "id": "projects", "label": "Projects" },
+      { "id": "contact", "label": "Contact" }
+    ]
+  },
+  "about": {
+    "sectionTitle": "About Me",
+    "headline": "Beyond the Code",
+    "experienceTitle": "Relevant Experience",
+    "experience": [
+      {
+        "index": "01.",
+        "title": "8+ Years Full Stack",
+        "description": "Specializing in Next.js & Cloud Infrastructure."
+      },
+      {
+        "index": "02.",
+        "title": "50+ Projects Delivered",
+        "description": "From startup MVPs to enterprise dashboards."
+      }
+    ],
+    "paragraphs": [
+      "My journey in technology started with a simple curiosity: how do things work under the hood? Over the past decade, that curiosity evolved into a professional mission to build software that isn't just functional, but genuinely impactful.",
+      "I specialize in bridging the gap between complex engineering requirements and intuitive user experiences. I believe that clean code is a prerequisite, but the real value lies in understanding the human element behind every digital interaction.",
+      "When I'm not architecting systems, I'm likely exploring the intersection of design and performance, ensuring that every application I build is as fast as it is beautiful. My approach is rooted in technical rigor and a relentless drive for innovation."
+    ],
+    "coreTitle": "Core Philosophy",
+    "core": [
+      {
+        "icon": "lightbulb",
+        "title": "Problem Solving",
+        "description": "Finding elegant solutions to complex logic hurdles."
+      },
+      {
+        "icon": "groups",
+        "title": "Teamwork",
+        "description": "Collaboration as the foundation for great products."
+      },
+      {
+        "icon": "psychology",
+        "title": "Learning",
+        "description": "Constant evolution in a fast-paced ecosystem."
+      }
+    ],
+    "hobbies": [
+      "☕ Coffee Enthusiast",
+      "🎸 Guitar Player",
+      "⛰️ Mountain Hiker",
+      "🛸 Sci-Fi Reader"
+    ]
+  }
+}
