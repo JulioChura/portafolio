@@ -141,26 +141,197 @@
     "liveUrl": "",
     "githubUrl": "https://github.com/JulioChura/edutec_academy.git"
   },
+  {
+    "id": 4,
+    "slug": "museum34",
+    "title": "Museum34 – Museo Virtual Inmersivo",
+    "category": "Web VR / Experiencia Inmersiva",
+    "description": "Experiencia web inmersiva desarrollada con tecnologías WebVR para la difusión cultural y educativa de la ciudad de Arequipa.",
+    "fullDescription": [
+      "Museum34 es una plataforma web inmersiva que permite explorar exposiciones virtuales y modelos 3D representativos de la riqueza cultural de Arequipa, accesible desde el navegador y compatible con dispositivos VR.",
+      "El proyecto integra entornos virtuales interactivos construidos con A-Frame y Three.js, combinados con una interfaz web moderna que facilita la navegación, exploración y manipulación de los elementos del museo.",
+      "Participé activamente en la implementación del frontend, colaborando en la construcción de componentes de interacción, flujos de usuario y capas visuales que conectan la experiencia VR con la interfaz web tradicional."
+    ],
+    "tags": [
+      "React",
+      "A-Frame",
+      "Three.js",
+      "WebVR",
+      "MediaPipe",
+      "Frontend",
+      "Experiencias Inmersivas"
+    ],
+    "thumbnail": "/images/museum34/screen1.webp",
+    "images": [
+      "/images/museum34/img1.webp",
+      "/images/museum34/img2.webp",
+      "/images/museum34/img3.webp",
+      "/images/museum34/img4.webp",
+      "/images/museum34/img5.webp",
+      "/images/museum34/img6.webp",
+      "/images/museum34/img7.webp",
+      "/images/museum34/img8.webp",
+      "/images/museum34/img9.webp",
+      "/images/museum34/screen1.webp"
+    ],
+    "techStack": [
+      "React 18",
+      "A-Frame",
+      "Three.js",
+      "WebVR",
+      "MediaPipe",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Django"
+    ],
+    "role": "Frontend Developer",
+    "responsibilities": [
+      "Colaboración activa en la implementación del frontend del proyecto",
+      "Desarrollo de componentes de interfaz para la interacción con objetos 3D",
+      "Construcción de modales y flujos de interacción entre la UI y el entorno virtual",
+      "Integración visual entre la experiencia VR y la navegación web tradicional",
+      "Soporte en pruebas de interacción y ajustes de experiencia de usuario"
+    ],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/dev1d123/museum34"
+  },
 
   {
-    "id": 3,
-    "slug": "aether-analytics",
-    "title": "Aether Analytics",
-    "category": "SaaS Platform",
-    "description": "Enterprise-grade SaaS dashboard with data visualization.",
+    "id": 5,
+    "slug": "ecommerce-platform",
+    "title": "E-Commerce Platform",
+    "category": "Plataforma Web",
+    "description": "Plataforma de comercio electrónico fullstack con arquitectura API REST, pagos en línea y gestión completa de pedidos.",
     "fullDescription": [
-      "Aether Analytics provides enterprise teams with powerful insights through interactive data visualizations. Built with D3.js and React, it transforms complex datasets into actionable intelligence.",
-      "The platform processes millions of data points daily, requiring careful optimization of both database queries and frontend rendering. I implemented virtual scrolling, lazy loading, and optimized PostgreSQL queries to ensure smooth performance even with large datasets."
+      "Esta plataforma de comercio electrónico ofrece una solución integral para la gestión de productos, usuarios, pedidos y pagos, construida bajo una arquitectura cliente-servidor con una separación clara entre frontend y backend.",
+      "El sistema implementa autenticación segura mediante JWT, carrito de compras persistente, gestión de direcciones, historial de pedidos y un panel administrativo para la administración de productos, usuarios y órdenes.",
+      "Participé activamente en la integración del sistema de pagos, ajustes al modelo relacional de la base de datos y en la implementación y refinamiento de componentes clave del frontend, incluyendo flujos de pago, validaciones y comunicación con la API, contribuyendo a una experiencia de usuario consistente y a la estabilidad general del sistema."
     ],
-    "tags": ["PostgreSQL", "D3.js", "React", "Python"],
-    "thumbnail": "https://lh3.googleusercontent.com/aida-public/AB6AXuD9DdvFTb6GUmfKLMJd8xA__iAJ4fC1Bgp-koUbWn98COLrK-cE8qqRO6rlHlYfUkOPunVZdtGcYEC8YW7hrT1A_ZMUHQfjg6muVaSnT4xjFJVLgfyWpmehuhingcK_SDQOJqfK3mSvbMuFNs3Lo1NEdop8bgKpmmpX1eC6snY6NlWFXn7_n9jY_Wv1eu1Df9BXG-YvAucljkrfTSHguRG9eAUUxnwlY3WdOpHAEtasWjhRXD5y56z5_VTj2X6p22Gxysewqxyg55Ys",
+    "tags": [
+      "Angular",
+      "TypeScript",
+      "Angular Material",
+      "Django",
+      "Django REST Framework",
+      "PostgreSQL",
+      "JWT",
+      "MercadoPago",
+      "Docker"
+    ],
+    "thumbnail": "/images/golandcenter/hero.webp",
     "images": [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC4Dok5WgVaJoouTnic2hqjbbIKobI-zlb7HXRIx6RQNH1UelsSzgh9IhWPqpTDkvBVBCBkchfJ02c5ywqNgnemKGfpJPpVFBzghJy272b6wrc4FJBMFxVmFSIXptaZ2iMAlRTnbolKjsYuVuLXQjNv08pdjtxRqYkUMBLAq-8bhnGnX04VOsl1ThXdUyYWP-3fGhVKXvjzVBg03f71DglM2rZXIXInGja0dufC3jN2wyx_jnC8_JXD_FCLItlZb2hqTzZsqYnihlWG",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCj_0ablJNcUPUrNBmw2K6d-T-_ag9tldoLwszJAU8w7vrhCeb13_DM5FJd0puU6FEr0_9I53zX13xvaAMAOOe8jQQWCXw4R6mbkf59cZyQBv2c2tF-4FX_qpqP-dmFSaIfiPMetIXUMfnmBniXwKHc_BetCc6azeVLW8qL8cvVN5s3JWBOOeMPFdBGFQCItijAEFUnIG6Gh9h-1R3VAU3ihsf_oQ0WmsGeeJQF-eVatV_ozFg6Cg2MuizOw83orG86RfQfpqaONppy",
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuD9PigMr_jU62MU68TYNk4XZPk254jx2s2pDUXJeOcCGoc8KKSWwyujMWuix7Xm_32Crk3Br8qiZvh0QfIbIJQjjOxCXRUdkx1gK4S6g3Sn3t4fx2cUYsBBXSOiZmXrW02vLlczLxXYFv9becGgYLvgm04ORJxzfmersqS0O5wShQOSgL_XuzUtvrSrB-1wiEjbW6lvpkoFTE-A75SpbmsDn1FSRDZ_9PJ9_AiVpujUaxmXzp15i6-qUdt0UAlKL_rBvPjys14_3dHI"
+      "/images/golandcenter/picture1.webp",
+      "/images/golandcenter/picture2.webp",
+      "/images/golandcenter/picture3.webp",
+      "/images/golandcenter/picture4.webp",
+      "/images/golandcenter/picture5.webp",
+      "/images/golandcenter/picture6.webp",
+      "/images/golandcenter/picture7.webp",
+      "/images/golandcenter/picture8.webp",
+      "/images/golandcenter/picture9.webp"
     ],
-    "techStack": ["React", "D3.js", "Python", "PostgreSQL", "Docker"],
-    "liveUrl": "#",
-    "githubUrl": "#"
+    "techStack": [
+      "Angular 19",
+      "TypeScript",
+      "Angular Material",
+      "RxJS",
+      "Django",
+      "Django REST Framework",
+      "PostgreSQL",
+      "SQLite",
+      "JWT",
+      "MercadoPago",
+      "Docker",
+      "Docker Compose"
+    ],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/JulioChura/GolandCenter.git"
+  },
+
+  {
+    "id": 6,
+    "slug": "aqp-transporte",
+    "title": "AQPTransporte – Plataforma de Venta de Pasajes",
+    "category": "Aplicación Web",
+    "description": "Aplicación web para la venta de pasajes interprovinciales, con pagos en línea, generación automática de vouchers y una experiencia de usuario orientada a procesos completos de compra.",
+    "fullDescription": [
+      "AQPTransporte es una aplicación web diseñada para cubrir de forma integral el proceso de compra de pasajes interprovinciales, desde la consulta de rutas hasta la confirmación del viaje, manteniendo una experiencia fluida y coherente en cada etapa.",
+      "La plataforma integra pagos en línea mediante Mercado Pago, junto con la generación automática de vouchers en formato PDF y su envío por correo electrónico, permitiendo cerrar el flujo de compra sin dependencias externas ni procesos manuales.",
+      "El desarrollo se centró en asegurar una comunicación sólida entre frontend y backend, la correcta implementación del flujo de pagos, la construcción de componentes clave de la interfaz y el manejo de estados, validaciones y comprobantes para el usuario final."
+    ],
+    "tags": [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "Vue.js",
+      "Vite",
+      "SQLite",
+      "Mercado Pago",
+      "JWT",
+      "Gmail SMTP",
+      "jsPDF",
+      "HTML2Canvas"
+    ],
+    "thumbnail": "/images/aqp-transporte/hero.webp",
+    "images": [
+      "/images/aqp-transporte/homepage.webp",
+      "/images/aqp-transporte/destinations-list.webp",
+      "/images/aqp-transporte/profile-screen.webp",
+      "/images/aqp-transporte/checkout-mercadopago.webp",
+      "/images/aqp-transporte/voucher.webp"
+    ],
+    "techStack": [
+      "Python",
+      "Django 5",
+      "Django REST Framework",
+      "Vue.js 3",
+      "Vite",
+      "SQLite",
+      "Mercado Pago",
+      "JWT",
+      "Gmail SMTP",
+      "Axios",
+      "jsPDF",
+      "HTML2Canvas"
+    ],
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "id": 7,
+    "slug": "bebidas-pinia",
+    "title": "Bebidas App – Buscador de Cócteles",
+    "category": "Aplicación Web",
+    "description": "Aplicación web desarrollada en Vue.js para la consulta de bebidas alcohólicas, con visualización de detalles y sistema de favoritos persistente.",
+    "fullDescription": [
+      "Bebidas App es una aplicación web ligera enfocada en la consulta de bebidas alcohólicas mediante una interfaz clara y dinámica, permitiendo a los usuarios explorar diferentes opciones de forma rápida y sencilla.",
+      "La aplicación consume una API pública para obtener información detallada de cada bebida, mostrando ingredientes, preparación y presentación a través de componentes reutilizables y modales interactivos.",
+      "Además, incorpora un sistema de favoritos gestionado con Pinia, permitiendo almacenar bebidas seleccionadas y mantener el estado del usuario durante la navegación, reforzando una experiencia fluida y coherente."
+    ],
+    "tags": [
+      "Vue.js",
+      "Pinia",
+      "JavaScript",
+      "Vite",
+      "API REST",
+      "HTML",
+      "CSS"
+    ],
+    "thumbnail": "/images/bebidas/hero.png",
+    "images": ["/images/bebidas/homepage.png", "/images/bebidas/modal.png"],
+    "techStack": [
+      "Vue.js 3",
+      "Pinia",
+      "Vite",
+      "JavaScript",
+      "API REST",
+      "HTML5",
+      "CSS3"
+    ],
+    "liveUrl": "https://bebidas-pinia.vercel.app/",
+    "githubUrl": "https://github.com/JulioChura/bebidas-pinia.git"
   }
+
+ 
 ]
