@@ -177,20 +177,24 @@
       </div>
 
       <!-- BOTONES LIVE / GITHUB -->
-      <div class="pt-12 border-t border-white/5 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
+      <div :class="['pt-12 border-t border-white/5 grid gap-4 mb-20', hasBoth ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1']">
+        <!-- GitHub (izquierda) -->
         <a 
-          :href="project.liveUrl"
-          class="flex items-center justify-center gap-3 py-5 rounded-2xl bg-primary hover:bg-primary/80 text-white font-bold transition-all shadow-lg shadow-primary/20"
-        >
-          <span class="material-symbols-outlined">rocket_launch</span>
-          View Live Demo
-        </a>
-        <a 
+          v-if="project.githubUrl"
           :href="project.githubUrl"
           class="flex items-center justify-center gap-3 py-5 rounded-2xl border border-white/10 bg-surface-dark hover:bg-white/5 text-white font-bold transition-all"
         >
           <span class="material-symbols-outlined">terminal</span>
           Explore on GitHub
+        </a>
+        <!-- Live Demo (azul, derecha) -->
+        <a 
+          v-if="project.liveUrl"
+          :href="project.liveUrl"
+          class="flex items-center justify-center gap-3 py-5 rounded-2xl bg-primary hover:bg-primary/80 text-white font-bold transition-all shadow-lg shadow-primary/20"
+        >
+          <span class="material-symbols-outlined">rocket_launch</span>
+          View Live Demo
         </a>
       </div>
     </main>
@@ -205,7 +209,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import projectsData from '../data/projects.json';
 
@@ -226,6 +230,11 @@ const displayImages = computed(() => {
   if (!project.value) return [];
   return project.value.images.slice(0, 3);
 });
+
+// Estado de disponibilidad de URLs para ajustar layout
+const hasGitHub = computed(() => !!(project.value && project.value.githubUrl));
+const hasLive = computed(() => !!(project.value && project.value.liveUrl));
+const hasBoth = computed(() => hasGitHub.value && hasLive.value);
 
 const openLightbox = (index) => {
   currentImageIndex.value = index;
@@ -307,4 +316,53 @@ onMounted(() => {
   const slug = route.params.slug;
   project.value = projectsData.find(p => p.slug === slug);
 });
+// SEO: dynamically update head tags when project is loaded
+function upsertMeta(selectorKey, keyValue, content) {
+  const selector = `${selectorKey}="${keyValue}"`;
+  let el = document.head.querySelector(`meta[${selector}]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(selectorKey, keyValue);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', content);
+}
+
+function updateProjectSEO(p) {
+  if (!p) return;
+  const title = `${p.title} – DevPortfolio`;
+  const description = p.description || 'Project case study.';
+  const image = (p.images && p.images[0]) || p.thumbnail || '/public/images/hero.webp';
+  const url = window.location.href;
+  const baseKeywordsEs = [
+    'portafolio', 'desarrollador web', 'programador', 'programador full stack', 'full stack',
+    'sitio web', 'aplicaciones web', 'desarrollo web', 'software', 'frontend', 'backend', 'Perú', 'Arequipa'
+  ];
+  const extraTech = Array.isArray(p.techStack) ? p.techStack.join(', ') : '';
+  const categoryEs = p.category || '';
+  const keywordsEs = `${baseKeywordsEs.join(', ')}, ${categoryEs}, ${extraTech}`.trim();
+
+  document.title = title;
+  const descEl = document.head.querySelector('meta[name="description"]');
+  if (descEl) descEl.setAttribute('content', description);
+  else {
+    const newDesc = document.createElement('meta');
+    newDesc.setAttribute('name', 'description');
+    newDesc.setAttribute('content', description);
+    document.head.appendChild(newDesc);
+  }
+  upsertMeta('property', 'og:title', title);
+  upsertMeta('property', 'og:description', description);
+  upsertMeta('property', 'og:type', 'website');
+  upsertMeta('property', 'og:image', image);
+  upsertMeta('property', 'og:url', url);
+  upsertMeta('name', 'twitter:card', 'summary_large_image');
+  upsertMeta('name', 'twitter:title', title);
+  upsertMeta('name', 'twitter:description', description);
+  upsertMeta('name', 'twitter:image', image);
+  upsertMeta('name', 'keywords', keywordsEs);
+}
+
+watch(project, (p) => updateProjectSEO(p));
+
 </script>

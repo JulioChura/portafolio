@@ -2,12 +2,12 @@
   {
     "id": 1,
     "slug": "aloja-aqp",
-    "title": "AlojaAQP – Plataforma de Alquiler Universitario",
-    "category": "Plataforma Web",
-    "description": "Plataforma fullstack para la búsqueda y gestión de alojamientos universitarios en Arequipa.",
+    "title": "AlojaAQP – University Housing Platform",
+    "category": "Web Platform",
+    "description": "Fullstack platform for searching and managing university housing in Arequipa.",
     "fullDescription": [
-      "AlojaAQP es una plataforma web diseñada para facilitar a estudiantes universitarios la búsqueda de alojamientos cercanos a universidades en Arequipa. El sistema permite filtrar por precio, servicios, ubicación y disponibilidad, ofreciendo una experiencia clara y orientada al usuario.",
-      "El proyecto incluye un frontend moderno construido con Vue 3 y un backend robusto desarrollado con Django REST Framework. Se implementó autenticación JWT, gestión de roles (estudiantes y propietarios), sistema de reseñas, favoritos y carga de imágenes en la nube, además de documentación automática de la API."
+      "AlojaAQP is a web platform designed to help university students find housing near universities in Arequipa. The system lets users filter by price, amenities, location, and availability, providing a clear, user-focused experience.",
+      "The project includes a modern frontend built with Vue 3 and a robust backend using Django REST Framework. It implements JWT authentication, role management (students and owners), reviews, favorites, cloud image uploads, and automatic API documentation."
     ],
     "tags": [
       "Vue 3",
@@ -96,12 +96,12 @@
   {
     "id": 3,
     "slug": "edutec-academy",
-    "title": "EduTec Academy – Plataforma Educativa Digital",
-    "category": "Plataforma Educativa",
-    "description": "Plataforma educativa web para la gestión integral de cursos, estudiantes y profesores con roles diferenciados.",
+    "title": "EduTec Academy – Digital Education Platform",
+    "category": "Education Platform",
+    "description": "Web education platform for comprehensive management of courses, students, and teachers with differentiated roles.",
     "fullDescription": [
-      "EduTec Academy es una plataforma educativa moderna diseñada para digitalizar la gestión académica de instituciones educativas. Ofrece roles claramente definidos para administradores, profesores y estudiantes, cada uno con interfaces y funcionalidades específicas.",
-      "El sistema cuenta con gestión de cursos por bloques modulares, tareas y evaluaciones, horarios visuales, dashboards interactivos y autenticación segura mediante JWT. El frontend fue desarrollado con Vue 3 y Vuetify, mientras que el backend utiliza Django REST Framework."
+      "EduTec Academy is a modern education platform designed to digitize academic management for educational institutions. It provides clearly defined roles for admins, teachers, and students, each with tailored interfaces and features.",
+      "The system includes modular course management, assignments and assessments, visual schedules, interactive dashboards, and secure JWT authentication. The frontend was built with Vue 3 and Vuetify, and the backend uses Django REST Framework."
     ],
     "tags": [
       "Vue",
@@ -145,13 +145,13 @@
   {
     "id": 4,
     "slug": "museum34",
-    "title": "Museum34 – Museo Virtual Inmersivo",
-    "category": "Web VR / Experiencia Inmersiva",
-    "description": "Experiencia web inmersiva desarrollada con tecnologías WebVR para la difusión cultural y educativa de la ciudad de Arequipa.",
+    "title": "Museum34 – Immersive Virtual Museum",
+    "category": "Web VR / Immersive Experience",
+    "description": "Immersive web experience built with WebVR technologies for cultural and educational outreach in Arequipa.",
     "fullDescription": [
-      "Museum34 es una plataforma web inmersiva que permite explorar exposiciones virtuales y modelos 3D representativos de la riqueza cultural de Arequipa, accesible desde el navegador y compatible con dispositivos VR.",
-      "El proyecto integra entornos virtuales interactivos construidos con A-Frame y Three.js, combinados con una interfaz web moderna que facilita la navegación, exploración y manipulación de los elementos del museo.",
-      "Participé activamente en la implementación del frontend, colaborando en la construcción de componentes de interacción, flujos de usuario y capas visuales que conectan la experiencia VR con la interfaz web tradicional."
+      "Museum34 is an immersive web platform that lets users explore virtual exhibitions and 3D models showcasing Arequipa’s cultural heritage, accessible from the browser and compatible with VR devices.",
+      "The project integrates interactive virtual environments built with A-Frame and Three.js, combined with a modern web interface that enables navigation, exploration, and manipulation of museum elements.",
+      "I actively contributed to the frontend implementation, building interaction components, user flows, and visual layers that connect the VR experience with the traditional web interface."
     ],
     "tags": [
       "Django",
@@ -161,7 +161,7 @@
       "WebVR",
       "MediaPipe",
       "Frontend",
-      "Experiencias Inmersivas"
+      "Immersive Experiences"
     ],
     "thumbnail": "/images/museum34/screen1.webp",
     "images": [
@@ -203,12 +203,12 @@
     "id": 5,
     "slug": "ecommerce-platform",
     "title": "E-Commerce Platform",
-    "category": "Plataforma Web",
-    "description": "Plataforma de comercio electrónico fullstack con arquitectura API REST, pagos en línea y gestión completa de pedidos.",
+    "category": "Web Platform",
+    "description": "Fullstack e-commerce platform with REST API architecture, online payments, and complete order management.",
     "fullDescription": [
-      "Esta plataforma de comercio electrónico ofrece una solución integral para la gestión de productos, usuarios, pedidos y pagos, construida bajo una arquitectura cliente-servidor con una separación clara entre frontend y backend.",
-      "El sistema implementa autenticación segura mediante JWT, carrito de compras persistente, gestión de direcciones, historial de pedidos y un panel administrativo para la administración de productos, usuarios y órdenes.",
-      "Participé activamente en la integración del sistema de pagos, ajustes al modelo relacional de la base de datos y en la implementación y refinamiento de componentes clave del frontend, incluyendo flujos de pago, validaciones y comunicación con la API, contribuyendo a una experiencia de usuario consistente y a la estabilidad general del sistema."
+      "This e-commerce platform provides an end-to-end solution for managing products, users, orders, and payments, built with a client-server architecture and a clear separation between frontend and backend.",
+      "The system implements secure JWT authentication, a persistent shopping cart, address management, order history, and an admin panel for managing products, users, and orders.",
+      "I actively contributed to payment system integration, adjustments to the relational data model, and implementation/refinement of key frontend components, including payment flows, validations, and API communication, ensuring a consistent user experience and overall system stability."
     ],
     "tags": [
       "Angular",
@@ -254,13 +254,13 @@
   {
     "id": 6,
     "slug": "aqp-transporte",
-    "title": "AQPTransporte – Plataforma de Venta de Pasajes",
-    "category": "Aplicación Web",
-    "description": "Aplicación web para la venta de pasajes interprovinciales, con pagos en línea, generación automática de vouchers y una experiencia de usuario orientada a procesos completos de compra.",
+    "title": "AQPTransporte – Interprovincial Ticket Sales Platform",
+    "category": "Web Application",
+    "description": "Web application for interprovincial ticket sales, with online payments, automatic voucher generation, and an end-to-end purchase experience.",
     "fullDescription": [
-      "AQPTransporte es una aplicación web diseñada para cubrir de forma integral el proceso de compra de pasajes interprovinciales, desde la consulta de rutas hasta la confirmación del viaje, manteniendo una experiencia fluida y coherente en cada etapa.",
-      "La plataforma integra pagos en línea mediante Mercado Pago, junto con la generación automática de vouchers en formato PDF y su envío por correo electrónico, permitiendo cerrar el flujo de compra sin dependencias externas ni procesos manuales.",
-      "El desarrollo se centró en asegurar una comunicación sólida entre frontend y backend, la correcta implementación del flujo de pagos, la construcción de componentes clave de la interfaz y el manejo de estados, validaciones y comprobantes para el usuario final."
+      "AQPTransporte is a web application designed to cover the entire process of purchasing interprovincial tickets—from route search to travel confirmation—maintaining a smooth, consistent experience at every stage.",
+      "The platform integrates online payments via Mercado Pago, automatic voucher generation in PDF, and email delivery, allowing the purchase flow to be completed without external dependencies or manual steps.",
+      "Development focused on solid frontend-backend communication, proper payment flow implementation, building key UI components, and handling states, validations, and receipts for the end user."
     ],
     "tags": [
       "Django",
@@ -302,19 +302,19 @@
   {
     "id": 7,
     "slug": "bebidas-pinia",
-    "title": "Bebidas App – Buscador de Cócteles",
-    "category": "Aplicación Web",
-    "description": "Aplicación web desarrollada en Vue.js para la consulta de bebidas alcohólicas, con visualización de detalles y sistema de favoritos persistente.",
+    "title": "Beverages App – Cocktail Finder",
+    "category": "Web Application",
+    "description": "Vue.js web application for searching alcoholic beverages, with detailed views and a persistent favorites system.",
     "fullDescription": [
-      "Bebidas App es una aplicación web ligera enfocada en la consulta de bebidas alcohólicas mediante una interfaz clara y dinámica, permitiendo a los usuarios explorar diferentes opciones de forma rápida y sencilla.",
-      "La aplicación consume una API pública para obtener información detallada de cada bebida, mostrando ingredientes, preparación y presentación a través de componentes reutilizables y modales interactivos.",
-      "Además, incorpora un sistema de favoritos gestionado con Pinia, permitiendo almacenar bebidas seleccionadas y mantener el estado del usuario durante la navegación, reforzando una experiencia fluida y coherente."
+      "Beverages App is a lightweight web application focused on browsing alcoholic beverages through a clear, dynamic interface, enabling users to explore different options quickly and easily.",
+      "The app consumes a public API to retrieve detailed information for each drink, displaying ingredients, preparation, and presentation via reusable components and interactive modals.",
+      "It also includes a favorites system managed with Pinia, allowing selected drinks to be stored and preserving user state during navigation for a smooth, coherent experience."
     ],
     "tags": [
       "Vue.js",
       "Pinia",
       "Vite",
-      "API REST",
+      "REST API",
       "HTML",
       "CSS"
     ],
@@ -325,7 +325,7 @@
       "Pinia",
       "Vite",
       "JavaScript",
-      "API REST",
+      "REST API",
       "HTML5",
       "CSS3"
     ],

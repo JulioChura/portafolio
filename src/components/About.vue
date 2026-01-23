@@ -36,8 +36,10 @@
                        border border-white/10 shadow-2xl
                        md:aspect-[4/5]"
               >
+                <!-- src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmxPxletF2K4M8MhOsfTXPgdxnHXtE_evZP1TbzW4FUumGQSYhMV5742MNQCvKwTk2XB6sOxZObckxqtGHzJd0TJ9ylp7k-3NBGGgJT2GIjAhBs57mC3NUlo45-47ZHC5nqLwxSLT8I4CrNWVYAP4o1go5bjIZYEkUcX0cmKVWf02ickpRucmaG_1Y1oeryBthUBJpnezNsPMpPXbBlo7FBnQVNBHhxDpT--PdTDOblXv156cMGm-ynVaANaofgMC9In4F7RKzhf9V" -->
+
                 <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmxPxletF2K4M8MhOsfTXPgdxnHXtE_evZP1TbzW4FUumGQSYhMV5742MNQCvKwTk2XB6sOxZObckxqtGHzJd0TJ9ylp7k-3NBGGgJT2GIjAhBs57mC3NUlo45-47ZHC5nqLwxSLT8I4CrNWVYAP4o1go5bjIZYEkUcX0cmKVWf02ickpRucmaG_1Y1oeryBthUBJpnezNsPMpPXbBlo7FBnQVNBHhxDpT--PdTDOblXv156cMGm-ynVaANaofgMC9In4F7RKzhf9V"
+                  src="/public/images/me.webp"
                   alt="Professional Portrait"
                   loading="lazy"
                   class="w-full h-full object-cover
@@ -65,9 +67,20 @@
                   :key="idx"
                   class="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/20 transition-all"
                 >
-                  <span class="text-primary font-bold">{{ item.index }}</span>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span v-if="item.category" class="text-xs text-slate-400">{{ item.category }}</span>
+                  </div>
                   <p class="text-white font-medium">{{ item.title }}</p>
                   <p class="text-slate-500 text-sm">{{ item.description }}</p>
+                  <a
+                    v-if="item.certificateUrl"
+                    :href="item.certificateUrl"
+                    target="_blank"
+                    rel="noopener"
+                    class="mt-2 inline-flex items-center text-xs text-primary hover:underline"
+                  >
+                    Certificate
+                  </a>
                 </div>
               </div>
             </div>
@@ -115,14 +128,15 @@
               </div>
             </div>
 
-            <!-- Tags -->
+            <!-- Hobbies with Icons -->
             <div class="pt-6 border-t border-border-dark flex flex-wrap gap-3">
               <span
                 v-for="(hobby, hidx) in content.about.hobbies"
                 :key="hidx"
-                class="px-4 py-2 rounded-full bg-surface-dark border border-border-dark text-xs text-slate-400"
+                class="px-4 py-2 rounded-full bg-surface-dark border border-border-dark text-xs text-slate-300 inline-flex items-center gap-2"
               >
-                {{ hobby }}
+                <Icon :icon="hobby.icon" class="text-slate-300" width="18" height="18" />
+                <span class="text-slate-400">{{ hobby.label }}</span>
               </span>
             </div>
           </div>
@@ -133,4 +147,5 @@
 </template>
 <script setup>
 import content from '../data/content.json';
+import { Icon } from '@iconify/vue';
 </script>

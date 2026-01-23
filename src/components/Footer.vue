@@ -5,7 +5,7 @@
         <div class="size-6 bg-primary/20 rounded flex items-center justify-center text-primary">
           <span class="material-symbols-outlined text-sm font-bold">terminal</span>
         </div>
-        <p class="text-slate-500 text-xs font-medium">© 2024 DevPortfolio. Built with Precision.</p>
+        <p class="text-slate-500 text-xs font-medium">© {{ currentYear }} DevPortfolio. Built with Precision.</p>
       </div>
       
       <div class="flex gap-8">
@@ -25,6 +25,30 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+// Año reactivo que se sincroniza en "tiempo real" cuando cambia
+const currentYear = ref(new Date().getFullYear());
+let yearTimerId;
+
+function scheduleYearUpdate() {
+  const now = new Date();
+  const nextYearStart = new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0, 0);
+  const msUntilNextYear = nextYearStart.getTime() - now.getTime();
+  yearTimerId = setTimeout(() => {
+    currentYear.value = new Date().getFullYear();
+    scheduleYearUpdate();
+  }, msUntilNextYear);
+}
+
+onMounted(() => {
+  scheduleYearUpdate();
+});
+
+onUnmounted(() => {
+  if (yearTimerId) clearTimeout(yearTimerId);
+});
+
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };

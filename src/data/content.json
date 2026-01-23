@@ -1,6 +1,6 @@
 {
   "header": {
-    "brand": "JCodinx",
+    "brand": "JCoding",
     "resumeLabel": "Resume",
     "nav": [
       { "id": "home", "label": "Home" },
@@ -16,21 +16,43 @@
     "experienceTitle": "Relevant Experience",
     "experience": [
       {
-        "index": "01.",
-        "title": "8+ Years Full Stack",
-        "description": "Specializing in Next.js & Cloud Infrastructure."
+        "title": "Global Game Jam 2025",
+        "category": "Hackathon",
+        "description": "Participation in a global game jam, contributing visual assets and supporting the early-stage prototype under time constraints.",
+        "fullDescription": [
+          "Collaborated in a short-term, high-pressure environment to explore a game concept based on the event theme.",
+          "My contribution focused on creating and integrating a small set of visual assets to support the prototype."
+        ],
+        "certificateUrl": "/certificates/globalGameJam.pdf"
       },
       {
-        "index": "02.",
-        "title": "50+ Projects Delivered",
-        "description": "From startup MVPs to enterprise dashboards."
+        "title": "HackaEdu 2025",
+        "category": "Hackathon",
+        "description": "Concept design of an educational platform using AI to enhance reading comprehension through guided content.",
+        "fullDescription": [
+          "Led the conceptual design of a learning platform aimed at improving reading comprehension through structured content and feedback.",
+          "The work focused on ideation, flow definition, and mockups, while the technical implementation was not completed during the event."
+        ],
+        "certificateUrl": "/certificates/hackaEdu.pdf"
+      },
+      {
+        "title": "HackaOdísea 2026",
+        "category": "Hackathon",
+        "description": "Development of a backend chat module for a child-focused risk detection solution aligned with the SDGs.",
+        "fullDescription": [
+          "Worked on the backend of a chat-based system designed to identify potential risk scenarios for children.",
+          "I was responsible for one of the backend services, including the chat module logic and backend deployment.",
+          "The system was composed of two backend services: one handling application logic and another managing direct communication with the language model, developed by a teammate."
+        ],
+        "certificateUrl": "/certificates/hackaOdisea.pdf"
       }
     ],
     "paragraphs": [
-      "My journey in technology started with a simple curiosity: how do things work under the hood? Over the past decade, that curiosity evolved into a professional mission to build software that isn't just functional, but genuinely impactful.",
-      "I specialize in bridging the gap between complex engineering requirements and intuitive user experiences. I believe that clean code is a prerequisite, but the real value lies in understanding the human element behind every digital interaction.",
-      "When I'm not architecting systems, I'm likely exploring the intersection of design and performance, ensuring that every application I build is as fast as it is beautiful. My approach is rooted in technical rigor and a relentless drive for innovation."
+      "I’m Julio, a fourth-year Systems Engineering student at UNSA, with a strong interest in application architecture and system design.",
+      "I believe that a well-designed architecture makes software easier to build, scale, and maintain. I enjoy understanding how systems are structured and how design decisions impact development.",
+      "I’m currently looking for opportunities to contribute to real technological solutions and continue learning through hands-on projects."
     ],
+
     "coreTitle": "Core Philosophy",
     "core": [
       {
@@ -50,10 +72,10 @@
       }
     ],
     "hobbies": [
-      "☕ Coffee Enthusiast",
-      "🎸 Guitar Player",
-      "⛰️ Mountain Hiker",
-      "🛸 Sci-Fi Reader"
+      { "icon": "mdi:coffee", "label": "Coffee Enthusiast" },
+      { "icon": "mdi:palette", "label": "Painting" },
+      { "icon": "mdi:chess-king", "label": "Chess" },
+      { "icon": "mdi:book-open-variant", "label": "Casual Reading" }
     ]
   }
 }
