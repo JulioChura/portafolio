@@ -12,7 +12,7 @@
       <!-- Botón Resume y Menu Toggle -->
       <div class="flex md:order-2 items-center gap-3">
         <a 
-          href="/Julio_Rubén_Chura_Acabana_CV_ES.pdf" 
+          href="/Julio_Rubén_Chura_Acabana_CV_EN.pdf" 
           download="Julio_Chura_CV.pdf"
           class="hidden sm:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold transition-all hover:bg-white/20"
         >
@@ -52,7 +52,7 @@
           
           <!-- Botón Resume en menú móvil -->
           <a 
-            href="/Julio_Rubén_Chura_Acabana_CV_ES.pdf" 
+            href="/public/Julio_Rubén_Chura_Acabana_CV_EN.pdf" 
             download="Julio_Chura_CV.pdf"
             class="sm:hidden flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-5 mt-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold transition-all hover:bg-white/20"
           >
@@ -74,15 +74,10 @@ const isMenuOpen = ref(false);
 
 const scrollToSection = (sectionId) => {
   if (router.currentRoute.value.name !== 'Home') {
-    router.push('/').then(() => {
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    });
+    // Si no estamos en Home, navega a Home con el hash
+    router.push(`/#${sectionId}`);
   } else {
+    // Si ya estamos en Home, solo hace scroll al elemento
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
