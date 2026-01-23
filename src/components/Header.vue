@@ -11,9 +11,13 @@
       
       <!-- Botón Resume y Menu Toggle -->
       <div class="flex md:order-2 items-center gap-3">
-        <button class="hidden sm:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold transition-all hover:bg-white/20">
+        <a 
+          href="/Julio_Rubén_Chura_Acabana_CV_ES.pdf" 
+          download="Julio_Chura_CV.pdf"
+          class="hidden sm:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold transition-all hover:bg-white/20"
+        >
           <span>{{ content.header.resumeLabel }}</span>
-        </button>
+        </a>
         
         <!-- Botón Hamburguesa -->
         <button 
@@ -47,9 +51,13 @@
           </a>
           
           <!-- Botón Resume en menú móvil -->
-          <button class="sm:hidden flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-5 mt-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold transition-all hover:bg-white/20">
+          <a 
+            href="/Julio_Rubén_Chura_Acabana_CV_ES.pdf" 
+            download="Julio_Chura_CV.pdf"
+            class="sm:hidden flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-5 mt-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold transition-all hover:bg-white/20"
+          >
             <span>{{ content.header.resumeLabel }}</span>
-          </button>
+          </a>
         </nav>
       </div>
     </div>
