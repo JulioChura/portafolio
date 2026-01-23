@@ -1,21 +1,6 @@
 <template>
   <div v-if="project" class="bg-background-dark text-slate-100 min-h-screen flex flex-col">
-    <!-- HEADER -->
-    <header class="w-full border-b border-slate-200 dark:border-white/5 px-6 lg:px-20 py-4 flex items-center justify-between sticky top-0 bg-background-dark/80 backdrop-blur-md z-50">
-      <router-link to="/" class="flex items-center gap-3">
-        <div class="bg-primary p-2 rounded-lg text-white">
-          <span class="material-symbols-outlined text-xl">deployed_code</span>
-        </div>
-        <span class="font-bold text-lg tracking-tight">Portfolio.dev</span>
-      </router-link>
-      
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium opacity-80">
-        <router-link to="/#projects" class="hover:text-primary transition-colors">Projects</router-link>
-        <a class="hover:text-primary transition-colors" href="#">Lab</a>
-        <router-link to="/#about" class="hover:text-primary transition-colors">About</router-link>
-        <router-link to="/#contact" class="hover:text-primary transition-colors">Contact</router-link>
-      </nav>
-    </header>
+    <Header />
 
     <main class="flex-1 max-w-6xl mx-auto w-full px-6 py-12 lg:py-20">
       <!-- BOTON VOLVER -->
@@ -115,6 +100,9 @@
             @mousemove="onDrag"
             @mouseup="endDrag"
             @mouseleave="endDrag"
+            @touchstart.passive="startDrag"
+            @touchmove.prevent="onDrag"
+            @touchend.passive="endDrag"
           >
             <img 
               ref="zoomImage"
@@ -210,8 +198,10 @@
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue';
+import { useHead } from '@vueuse/head'
 import { useRoute } from 'vue-router';
 import projectsData from '../data/projects.json';
+import Header from '../components/Header.vue';
 
 const route = useRoute();
 const project = ref(null);
@@ -225,6 +215,10 @@ const dragStartX = ref(0);
 const dragStartY = ref(0);
 const dragStartPanX = ref(0);
 const dragStartPanY = ref(0);
+// Swipe navigation when not zoomed
+const isSwiping = ref(false);
+const swipeStartX = ref(0);
+const swipeDeltaX = ref(0);
 
 const displayImages = computed(() => {
   if (!project.value) return [];
@@ -290,79 +284,82 @@ const handleWheel = (event) => {
 };
 
 const startDrag = (event) => {
+  const clientX = 'touches' in event && event.touches.length ? event.touches[0].clientX : event.clientX;
+  const clientY = 'touches' in event && event.touches.length ? event.touches[0].clientY : event.clientY;
+
   if (zoomLevel.value > 1) {
     isDragging.value = true;
-    dragStartX.value = event.clientX;
-    dragStartY.value = event.clientY;
+    dragStartX.value = clientX;
+    dragStartY.value = clientY;
     dragStartPanX.value = panX.value;
     dragStartPanY.value = panY.value;
+  } else {
+    // prepare swipe navigation when image is at base zoom
+    isSwiping.value = true;
+    swipeStartX.value = clientX;
+    swipeDeltaX.value = 0;
   }
 };
 
 const onDrag = (event) => {
+  const clientX = 'touches' in event && event.touches.length ? event.touches[0].clientX : event.clientX;
+  const clientY = 'touches' in event && event.touches.length ? event.touches[0].clientY : event.clientY;
+
   if (isDragging.value && zoomLevel.value > 1) {
-    const deltaX = (event.clientX - dragStartX.value) / zoomLevel.value;
-    const deltaY = (event.clientY - dragStartY.value) / zoomLevel.value;
+    const deltaX = (clientX - dragStartX.value) / zoomLevel.value;
+    const deltaY = (clientY - dragStartY.value) / zoomLevel.value;
     panX.value = dragStartPanX.value + deltaX;
     panY.value = dragStartPanY.value + deltaY;
+  } else if (isSwiping.value && zoomLevel.value === 1) {
+    swipeDeltaX.value = clientX - swipeStartX.value;
   }
 };
 
 const endDrag = () => {
+  // finish pan
   isDragging.value = false;
+  // finish swipe: if horizontal delta exceeds threshold, navigate
+  if (isSwiping.value && zoomLevel.value === 1) {
+    const threshold = 50; // pixels
+    if (Math.abs(swipeDeltaX.value) > threshold) {
+      if (swipeDeltaX.value < 0 && currentImageIndex.value < project.value.images.length - 1) {
+        nextImage();
+      } else if (swipeDeltaX.value > 0 && currentImageIndex.value > 0) {
+        previousImage();
+      }
+    }
+  }
+  isSwiping.value = false;
+  swipeDeltaX.value = 0;
 };
 
 onMounted(() => {
   const slug = route.params.slug;
   project.value = projectsData.find(p => p.slug === slug);
 });
-// SEO: dynamically update head tags when project is loaded
-function upsertMeta(selectorKey, keyValue, content) {
-  const selector = `${selectorKey}="${keyValue}"`;
-  let el = document.head.querySelector(`meta[${selector}]`);
-  if (!el) {
-    el = document.createElement('meta');
-    el.setAttribute(selectorKey, keyValue);
-    document.head.appendChild(el);
-  }
-  el.setAttribute('content', content);
-}
 
-function updateProjectSEO(p) {
-  if (!p) return;
-  const title = `${p.title} – DevPortfolio`;
-  const description = p.description || 'Project case study.';
-  const image = (p.images && p.images[0]) || p.thumbnail || '/public/images/hero.webp';
-  const url = window.location.href;
-  const baseKeywordsEs = [
-    'portafolio', 'desarrollador web', 'programador', 'programador full stack', 'full stack',
-    'sitio web', 'aplicaciones web', 'desarrollo web', 'software', 'frontend', 'backend', 'Perú', 'Arequipa'
-  ];
-  const extraTech = Array.isArray(p.techStack) ? p.techStack.join(', ') : '';
-  const categoryEs = p.category || '';
-  const keywordsEs = `${baseKeywordsEs.join(', ')}, ${categoryEs}, ${extraTech}`.trim();
+watch(project, (p) => {
+  if (!p) return
 
-  document.title = title;
-  const descEl = document.head.querySelector('meta[name="description"]');
-  if (descEl) descEl.setAttribute('content', description);
-  else {
-    const newDesc = document.createElement('meta');
-    newDesc.setAttribute('name', 'description');
-    newDesc.setAttribute('content', description);
-    document.head.appendChild(newDesc);
-  }
-  upsertMeta('property', 'og:title', title);
-  upsertMeta('property', 'og:description', description);
-  upsertMeta('property', 'og:type', 'website');
-  upsertMeta('property', 'og:image', image);
-  upsertMeta('property', 'og:url', url);
-  upsertMeta('name', 'twitter:card', 'summary_large_image');
-  upsertMeta('name', 'twitter:title', title);
-  upsertMeta('name', 'twitter:description', description);
-  upsertMeta('name', 'twitter:image', image);
-  upsertMeta('name', 'keywords', keywordsEs);
-}
+  useHead({
+    title: `${p.title} | Portfolio.dev`,
+    meta: [
+      {
+        name: 'description',
+        content: p.description
+      },
+      {
+        property: 'og:title',
+        content: p.title
+      },
+      {
+        property: 'og:description',
+        content: p.description
+      }
+    ]
+  })
+})
 
-watch(project, (p) => updateProjectSEO(p));
+
 
 </script>

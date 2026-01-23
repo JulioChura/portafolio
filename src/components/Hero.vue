@@ -4,7 +4,7 @@
       <img 
         alt="Abstract Tech Background" 
         class="w-full h-full object-cover opacity-20 mix-blend-luminosity" 
-        src="/public/images/hero.webp"
+        src="/images/hero.webp"
       />
       
       <div class="absolute inset-0 bg-background-dark/60"></div>

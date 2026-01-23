@@ -4,10 +4,10 @@
     
     <main class="flex flex-col items-center w-full">
       <Hero />
-      <About />
-      <Stack />
-      <Projects />
-      <Contact />
+      <About v-appear class="reveal" />
+      <Stack v-appear class="reveal reveal-delay-1" />
+      <Projects v-appear class="reveal reveal-delay-2" />
+      <Contact v-appear class="reveal reveal-delay-3" />
     </main>
     
     <Footer />

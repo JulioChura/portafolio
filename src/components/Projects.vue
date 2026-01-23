@@ -77,7 +77,9 @@ const relevantMap = {
   'Vite': 'logos:vitejs',
   'Vuetify': 'logos:vuetify',
   'TailwindCSS': 'logos:tailwindcss-icon',
-  'Tailwind CSS': 'logos:tailwindcss-icon'
+  'Tailwind CSS': 'logos:tailwindcss-icon',
+  'HTML': 'logos:html-5',
+  'CSS': 'logos:css-3'
 };
 
 const normalize = (tag) => {

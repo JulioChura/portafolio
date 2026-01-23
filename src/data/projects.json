@@ -159,6 +159,7 @@
       "A-Frame",
       "Three.js",
       "WebVR",
+      "CSS",
       "MediaPipe",
       "Frontend",
       "Immersive Experiences"
@@ -267,6 +268,7 @@
       "Django REST Framework",
       "Vue.js",
       "Vite",
+      "CSS",
       "SQLite",
       "Mercado Pago",
       "JWT",
@@ -314,9 +316,7 @@
       "Vue.js",
       "Pinia",
       "Vite",
-      "REST API",
-      "HTML",
-      "CSS"
+      "REST API"
     ],
     "thumbnail": "/images/bebidas/hero.png",
     "images": ["/images/bebidas/homepage.png", "/images/bebidas/modal.png"],
@@ -325,9 +325,7 @@
       "Pinia",
       "Vite",
       "JavaScript",
-      "REST API",
-      "HTML5",
-      "CSS3"
+      "REST API"
     ],
     "liveUrl": "https://bebidas-pinia.vercel.app/",
     "githubUrl": "https://github.com/JulioChura/bebidas-pinia.git"

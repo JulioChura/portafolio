@@ -3,7 +3,12 @@
 </script>
 
 <template>
-  <router-view />
+  <router-view v-slot="{ Component }">
+    <transition name="fade-slide" mode="out-in" appear>
+      <component :is="Component" />
+    </transition>
+  </router-view>
+  
 </template>
 
 <style>

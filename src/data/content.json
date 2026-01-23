@@ -48,13 +48,14 @@
       }
     ],
     "paragraphs": [
-      "I’m Julio, a fourth-year Systems Engineering student at UNSA, with a strong interest in application architecture and system design.",
-      "I believe that a well-designed architecture makes software easier to build, scale, and maintain. I enjoy understanding how systems are structured and how design decisions impact development.",
-      "I’m currently looking for opportunities to contribute to real technological solutions and continue learning through hands-on projects."
+      "I’m Julio, a fourth-year Systems Engineering student at UNSA, interested in web development and backend fundamentals.",
+      "I enjoy understanding how applications are structured at a project level, organizing code clearly, and learning how data flows between the frontend and backend.",
+      "I’m currently looking for opportunities to gain professional experience, contribute to real projects, and continue learning through hands-on development."
     ],
 
     "coreTitle": "Core Philosophy",
     "core": [
+      
       {
         "icon": "lightbulb",
         "title": "Problem Solving",

@@ -39,7 +39,7 @@
                 <!-- src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmxPxletF2K4M8MhOsfTXPgdxnHXtE_evZP1TbzW4FUumGQSYhMV5742MNQCvKwTk2XB6sOxZObckxqtGHzJd0TJ9ylp7k-3NBGGgJT2GIjAhBs57mC3NUlo45-47ZHC5nqLwxSLT8I4CrNWVYAP4o1go5bjIZYEkUcX0cmKVWf02ickpRucmaG_1Y1oeryBthUBJpnezNsPMpPXbBlo7FBnQVNBHhxDpT--PdTDOblXv156cMGm-ynVaANaofgMC9In4F7RKzhf9V" -->
 
                 <img
-                  src="/public/images/me.webp"
+                  src="/images/me.webp"
                   alt="Professional Portrait"
                   loading="lazy"
                   class="w-full h-full object-cover

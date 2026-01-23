@@ -32,6 +32,8 @@ const technologies = [
   { name: 'TypeScript', icon: 'logos:typescript-icon' },
   { name: 'Vite', icon: 'logos:vitejs' },
   { name: 'Java', icon: 'logos:java' },
-  { name: 'TailwindCSS', icon: 'logos:tailwindcss-icon' }
+  { name: 'TailwindCSS', icon: 'logos:tailwindcss-icon' },
+  { name: 'HTML', icon: 'logos:html-5' },
+  { name: 'CSS', icon: 'logos:css-3' }
 ];
 </script>
